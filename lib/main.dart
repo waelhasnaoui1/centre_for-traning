@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
+import '../screens/welcome_screen.dart';
 import 'package:centre_for_training/layout/news_app/cubit/cubit.dart';
 import 'package:centre_for_training/layout/news_app/news_layout.dart';
 import 'package:centre_for_training/layout/shop_app/cubit/cubit.dart';
@@ -13,6 +14,7 @@ import 'package:centre_for_training/layout/social_app/social_layout.dart';
 import 'package:centre_for_training/modules/shop_app/login/shop_login_screen.dart';
 import 'package:centre_for_training/modules/shop_app/on_boarding/on_boarding_screen.dart';
 import 'package:centre_for_training/modules/social_app/social_login/social_login_screen.dart';
+import 'package:centre_for_training/modules/social_app/social_register/social_register_screen.dart';
 import 'package:centre_for_training/shared/bloc_observer.dart';
 import 'package:centre_for_training/shared/components/constants.dart';
 import 'package:centre_for_training/shared/cubit/cubit.dart';
@@ -20,6 +22,7 @@ import 'package:centre_for_training/shared/cubit/states.dart';
 import 'package:centre_for_training/shared/network/local/cache_helper.dart';
 import 'package:centre_for_training/shared/network/remote/dio_helper.dart';
 import 'package:centre_for_training/shared/styles/themes.dart';
+
 
 void main() async {
   // بيتأكد ان كل حاجه هنا في الميثود خلصت و بعدين يتفح الابلكيشن
@@ -34,6 +37,7 @@ void main() async {
   bool isDark = CacheHelper.getData(key: 'isDark');
 
   Widget widget;
+
 
   //bool onBoarding = CacheHelper.getData(key: 'onBoarding');
   //token = CacheHelper.getData(key: 'token');
@@ -73,7 +77,7 @@ class MyApp extends StatelessWidget {
   final Widget startWidget;
 
   MyApp({
-    this.isDark,
+   this.isDark,
     this.startWidget,
   });
 
@@ -115,8 +119,16 @@ class MyApp extends StatelessWidget {
             theme: lightTheme,
             darkTheme: darkTheme,
             themeMode:
-                AppCubit.get(context).isDark ? ThemeMode.dark : ThemeMode.light,
-            home: startWidget,
+            AppCubit.get(context).isDark ? ThemeMode.light : ThemeMode.dark,
+            initialRoute:WelcomeScreen.id,
+            routes: {
+             // Login.id: (context) => Login (),
+             // Register.id:(context) =>Register(),
+             // MainScreen.id:(context) => MainScreen(),
+              WelcomeScreen.id:(context) => WelcomeScreen(),
+              SocialRegisterScreen.id:(context)=>SocialRegisterScreen()
+
+            },
           );
         },
       ),

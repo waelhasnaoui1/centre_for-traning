@@ -5,6 +5,7 @@ import 'package:centre_for_training/layout/social_app/social_layout.dart';
 import 'package:centre_for_training/modules/social_app/social_register/cubit/cubit.dart';
 import 'package:centre_for_training/modules/social_app/social_register/cubit/states.dart';
 import 'package:centre_for_training/shared/components/components.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SocialRegisterScreen extends StatelessWidget {
   var formKey = GlobalKey<FormState>();
@@ -12,6 +13,8 @@ class SocialRegisterScreen extends StatelessWidget {
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
   var phoneController = TextEditingController();
+  final String assetRegister = 'assets/images/sign.svg';
+  static const String id='SocialRegisterScreen';
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +35,11 @@ class SocialRegisterScreen extends StatelessWidget {
             body: Center(
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(30.0),
                   child: Form(
                     key: formKey,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
                           'REGISTER',
@@ -44,12 +47,13 @@ class SocialRegisterScreen extends StatelessWidget {
                                 color: Colors.black,
                               ),
                         ),
-                        Text(
-                          'Register now to communicate with friends',
-                          style: Theme.of(context).textTheme.bodyText1.copyWith(
-                                color: Colors.grey,
-                              ),
+                        SvgPicture.asset(
+                          assetRegister,
+                          semanticsLabel: 'Acme Logo',
+                          width: 200,
+
                         ),
+
                         SizedBox(
                           height: 30.0,
                         ),
@@ -67,6 +71,7 @@ class SocialRegisterScreen extends StatelessWidget {
                         SizedBox(
                           height: 15.0,
                         ),
+
                         defaultFormField(
                           controller: emailController,
                           type: TextInputType.emailAddress,
