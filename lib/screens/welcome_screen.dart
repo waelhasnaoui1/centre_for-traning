@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:centre_for_training/modules/social_app/social_login/social_login_screen.dart';
 import 'package:centre_for_training/modules/social_app/social_register/social_register_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+//
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome';
   final String assetName = 'assets/images/education.svg';
