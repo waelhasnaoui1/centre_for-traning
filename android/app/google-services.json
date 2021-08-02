@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "32107492081",
+    "project_id": "centre-f",
+    "storage_bucket": "centre-f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32107492081:android:84ce5d1b5da7cad221af50",
+        "android_client_info": {
+          "package_name": "com.example.centre_for_training"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32107492081-qe0hkjbkkpbe3m2ur0ml3ed1hhfsn9v4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnnXkdWP5iVjDuUGnnIQJRZLAKbIRhzOg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32107492081-qe0hkjbkkpbe3m2ur0ml3ed1hhfsn9v4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
